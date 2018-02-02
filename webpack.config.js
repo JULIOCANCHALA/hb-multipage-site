@@ -4,17 +4,6 @@ var StyleLintPlugin = require('stylelint-webpack-plugin') // CSS linter.
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin') // To minify JavaScript
 const path = require('path')
 
-/*
-Essentially, webpack loaders transform all types of files into modules that can be included in your
-application's dependency graph (and eventually a bundle).
-
-1. The test property identifies which file or files should be transformed.
-2. The use property indicates which loader should be used to do the transforming.
-*/
-
-/*
-Plugins range from bundle optimization and minification all the way to defining environment-like variables.
-*/
 module.exports = {
   entry: './src/main.js',
   output: {
@@ -54,7 +43,7 @@ module.exports = {
       },
       {
         test: /\.pug/,
-        loaders: ['html-loader', 'pug-html-loader']
+        use: ['pug-loader']
       },
       {
         enforce: 'pre',
