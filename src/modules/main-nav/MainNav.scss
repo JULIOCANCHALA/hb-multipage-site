@@ -1,5 +1,46 @@
-.Main-nav{
-  height: 200px;
+@import '../../variables';
+@import '../../utils';
+
+.main-nav{
+  height: 56px;
   width: 100%;
   background-color: black;
+  display: flex;
+}
+.hamburguerIcon{
+  height: 100%;
+  width: 20%;
+  background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &-btn{
+    height: 20px;
+    width: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: yellow;
+    cursor: pointer;
+    
+  }
+  &-item{
+    background-color: green;
+    height: 5px;
+    width: inherit;
+  }
+}
+.mainLogo{
+  height: 100%;
+  width: 60%;
+  background: blue;
+  @include at-smallView {
+    background: purple;
+  }
+}
+.contact{
+  height: 100%;
+  width: 20%;
+  background: yellow;
 }
