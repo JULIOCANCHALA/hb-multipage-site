@@ -6,6 +6,16 @@ div(class="main__nav")
       div(class="hamburguer-icon-item")
   div(class="nav__logo")
     a(href!=logo.link)
-        //img(class="hamburguerIcon-img" src!=logo.img)
+      img(class="nav__logo-img" src!=logo.img)
   div(class="nav__contact")
-  
+div(class="menu")
+  - var values = links;
+  ul(class="menu_container")
+    each val in values
+      li(class="menu__item")
+        if val.hasOwnProperty('links')
+          button(class="menu__item--btn")
+            h2(class="menu__item-text")= val.label
+        else 
+          a(class="menu__item--link" href!=val.href)
+            h2(class="menu__item-text")= val.label
