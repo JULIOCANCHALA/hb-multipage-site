@@ -9,13 +9,18 @@ div(class="main__nav")
       img(class="nav__logo-img" src!=logo.img)
   div(class="nav__contact")
 div(class="menu")
-  - var values = links;
+  - var items = links;
   ul(class="menu_container")
-    each val in values
+    each item in items
       li(class="menu__item")
-        if val.hasOwnProperty('links')
+        if item.hasOwnProperty('links')
           button(class="menu__item--btn")
-            h2(class="menu__item-text")= val.label
+            h2(class="menu__item-text")= item.label
+          - var subitems = item.links;
+          each subitem in subitems
+            li(class="menu__item menu__item--sub" data-parent!=item.label)
+              a(class="menu__item--link" href!=subitem.href)
+                h2(class="menu__item-text")= subitem.label
         else 
-          a(class="menu__item--link" href!=val.href)
-            h2(class="menu__item-text")= val.label
+          a(class="menu__item--link" href!=item.href)
+            h2(class="menu__item-text")= item.label
