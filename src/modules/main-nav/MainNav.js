@@ -14,6 +14,7 @@ export default class Mainnav {
 
   start () {
     this.elements.hamIcon = this.node.querySelector('.hamburguer-icon-btn')
+    this.elements.hamIconItems = this.node.querySelectorAll('.hamburguer-icon-item')
     this.elements.menu = document.querySelector('.menu')
     this.elements.btnsMenu = document.querySelectorAll('.menu__item--btn')
     this.elements.subItems = document.querySelectorAll('.menu__item--sub')
@@ -21,6 +22,9 @@ export default class Mainnav {
   setClicks () {
     this.elements.hamIcon.addEventListener('click', () => {
       this.elements.menu.classList.toggle('menu--visible')
+      this.elements.hamIconItems[0].classList.toggle('hamburguer-icon-item--item1')
+      this.elements.hamIconItems[1].classList.toggle('hamburguer-icon-item--item2')
+      this.elements.hamIconItems[2].classList.toggle('hamburguer-icon-item--item3')
     })
 
     this.elements.btnsMenu.forEach(element => {
@@ -28,9 +32,10 @@ export default class Mainnav {
     })
   }
   opensubMenu (event) {
-    console.log(event.target.textContent)
     this.elements.subItems.forEach(element => {
-      console.log(element.dataset)
+      if (element.dataset.parent === event.target.textContent) {
+        element.classList.toggle('menu__item-state--colapsed')
+      }
     })
   }
 }

@@ -4,7 +4,7 @@
 .main__nav{
   height: 56px;
   width: 100%;
-  background-color: black;
+  background-color: white;
   display: flex;
 }
 .nav__hamburguer-icon{
@@ -22,7 +22,7 @@
     width: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background-color: rgba(0, 0, 0, 0);
     border: 0px;
@@ -33,6 +33,18 @@
     height: 3px;
     width: inherit;
     border-radius: 2px;
+    transition: transform 0.2s;
+    &--item1{
+      background-color: $color-item;     
+      transform: translateY(4px) rotateZ(45deg);
+    }
+    &--item2{
+      display: none;
+    }
+    &--item3{
+      background-color: $color-item;     
+      transform: translateY(-5px) rotateZ(-45deg);
+    }
   }
 }
 
@@ -44,7 +56,7 @@
   justify-content: center;
   align-items: center;
   &-img{
-    height: 35px;
+    height: 30px;
   }
   @include at-smallView {
     background: purple;
@@ -57,13 +69,20 @@
   height: 100%;
   width: 20%;
   background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &-img{
+    width: 30px;
+    height: 28px;
+  }
 }
 .menu{
   height: calc(100% - 56px);
   width: 100%;
   background-color: $color-item;
   opacity: 0;
-  transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 0;
   &__container{
     width: 100%;
@@ -80,7 +99,7 @@
     height: 60px;
     display: flex;
     border-bottom: solid 1px white;
-    transition: height 0.6s ease-in-out;
+    transition: height 0.2s ease-out;
     &--btn{
       height: 100%;
       width: 100%;
@@ -107,7 +126,7 @@
     &--sub{
       background-color: $color-subitem;
     }
-    &--colapsed{
+    &-state--colapsed{
       height: 0px;
       overflow: hidden;
       border: 0px;

@@ -7,7 +7,8 @@ div(class="main__nav")
   div(class="nav__logo")
     a(href!=logo.link)
       img(class="nav__logo-img" src!=logo.img)
-  div(class="nav__contact")
+  div(class="nav__contact")    
+    img(class="nav__contact-img" src="http://www.defibmap.org/media/images/contact.png")
 div(class="menu")
   - var items = links;
   ul(class="menu_container")
@@ -18,7 +19,7 @@ div(class="menu")
             h2(class="menu__item-text")= item.label
           - var subitems = item.links;
           each subitem in subitems
-            li(class="menu__item menu__item--sub" data-parent!=item.label)
+            li(class="menu__item menu__item--sub menu__item-state--colapsed" data-parent!=item.label)
               a(class="menu__item--link" href!=subitem.href)
                 h2(class="menu__item-text")= subitem.label
         else 
