@@ -11,17 +11,18 @@ div(class="main__nav")
     img(class="nav__contact-img" src="http://www.defibmap.org/media/images/contact.png")
 div(class="menu")
   - var items = links;
-  ul(class="menu_container")
+  ul(class="menu__container")
     each item in items
       li(class="menu__item")
         if item.hasOwnProperty('links')
           button(class="menu__item--btn")
-            h2(class="menu__item-text")= item.label
+            h2(class="menu__item-text")= item.label + " ▼"
           - var subitems = item.links;
-          each subitem in subitems
-            li(class="menu__item menu__item--sub menu__item-state--colapsed" data-parent!=item.label)
-              a(class="menu__item--link" href!=subitem.href)
-                h2(class="menu__item-text")= subitem.label
+          ul(class="menu__container-sub  menu__container-sub--colapsed" data-parent!=item.label)
+            each subitem in subitems       
+              li(class="menu__item menu__item--sub")
+                a(class="menu__item--link" href!=subitem.href)
+                  h2(class="menu__item-text menu__item-text--sub")= subitem.label
         else 
           a(class="menu__item--link" href!=item.href)
             h2(class="menu__item-text")= item.label

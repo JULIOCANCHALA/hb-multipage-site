@@ -17,7 +17,7 @@ export default class Mainnav {
     this.elements.hamIconItems = this.node.querySelectorAll('.hamburguer-icon-item')
     this.elements.menu = document.querySelector('.menu')
     this.elements.btnsMenu = document.querySelectorAll('.menu__item--btn')
-    this.elements.subItems = document.querySelectorAll('.menu__item--sub')
+    this.elements.subContainers = document.querySelectorAll('.menu__container-sub')
   }
   setClicks () {
     this.elements.hamIcon.addEventListener('click', () => {
@@ -32,9 +32,12 @@ export default class Mainnav {
     })
   }
   opensubMenu (event) {
-    this.elements.subItems.forEach(element => {
-      if (element.dataset.parent === event.target.textContent) {
-        element.classList.toggle('menu__item-state--colapsed')
+    this.elements.subContainers.forEach(element => {
+      const newheight = (element.childElementCount * 50).toString() + 'px'
+      const nameparent = element.dataset.parent + ' ▼'
+      if (nameparent === event.target.textContent) {
+        element.classList.toggle('menu__container-sub--colapsed')
+        element.style.height = element.style.height === newheight ? '' : newheight
       }
     })
   }
