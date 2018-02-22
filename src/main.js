@@ -1,4 +1,4 @@
-import Mainnav from './modules/main-nav/MainNav.js'
+import Mainnav from './modules/main-nav/mainnav.js'
 import './main.scss'
 import '../node_modules/reset-css/_reset.scss'
 
