@@ -35,5 +35,27 @@
         "href": "https://www.hugeinc.com/contact"
       }
     ]
+  },
+  "hero":{
+    "header": "HELLO.",
+    "description": "Make something you love.",
+    "cta": {
+      "label": "Explorer",
+      "url": "https://www.hugeinc.com/us"
+    },
+    "images": {
+      "small": {
+        "url": "",
+        "description": ""
+      },
+      "medium": {
+        "url": "",
+        "description": ""
+      },
+      "large": {
+        "url": "",
+        "description": ""
+      }
+    }
   }
 }

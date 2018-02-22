@@ -8,11 +8,11 @@ export default class Mainnav {
     this.node = node
     this.node.innerHTML = template(mainNav)
     this.elements = {}
-    this.start()
+    this.DOMreferences()
     this.setClicks()
   }
 
-  start () {
+  DOMreferences () {
     this.elements.hamIcon = this.node.querySelector('.hamburguer-icon-btn')
     this.elements.hamIconItems = this.node.querySelectorAll('.hamburguer-icon-item')
     this.elements.menu = document.querySelector('.menu')
