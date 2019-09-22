@@ -1,0 +1,11 @@
+@mixin at-mediumView{
+  @media (min-width: $small) {
+    @content;
+  }
+}
+
+@mixin at-largeView {
+  @media (min-width: $medium) {
+    @content;
+  }
+}

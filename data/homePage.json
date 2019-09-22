@@ -1,0 +1,61 @@
+{
+  "mainNav": {
+    "logo": {
+      "img": "https://static1.squarespace.com/static/560e95cfe4b01a4c320a4510/560eb712e4b084b8f9d52915/560eb753e4b0e6c310b4ffb5/1443805011517/hugeinc.png",
+      "link": "https://www.hugeinc.com/"
+    },
+    "links": [
+      {
+        "label": "Work",
+        "href": "https://www.hugeinc.com/work"
+      },
+      {
+        "label": "About",
+        "links": [
+          {
+            "label": "Business Consulting",
+            "href": "https://www.hugeinc.com/us/business-consulting"
+          },
+          {
+            "label": "Innovation",
+            "href": "https://www.hugeinc.com/us/innovation"
+          },
+          {
+            "label": "Branding",
+            "href": "https://www.hugeinc.com/us/branding"
+          }
+        ]
+      },
+      {
+        "label": "Careers",
+        "href": "https://www.hugeinc.com/careers"
+      },
+      {
+        "label": "Contact",
+        "href": "https://www.hugeinc.com/contact"
+      }
+    ]
+  },
+  "hero":{
+    "header": "HELLO.",
+    "description": "Make something you love.",
+    "cta": {
+      "label": "Explorer",
+      "url": "https://www.hugeinc.com/us"
+    },
+    "images": {
+      "small": {
+        "url": "",
+        "description": ""
+      },
+      "medium": {
+        "url": "",
+        "description": ""
+      },
+      "large": {
+        "url": "",
+        "description": ""
+      }
+    }
+  }
+}
